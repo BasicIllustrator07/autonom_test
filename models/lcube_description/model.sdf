@@ -4,6 +4,11 @@
   <model name="prius_hybrid">
     <pose>0 0 0.03 0 0 0</pose>
      <link name="chassis">
+
+      <velocity>-1e-06 -1.8e-05 2.1e-05 3e-06 -0 0</velocity>
+      <acceleration>5.1e-05 7e-06 -2e-06 -3e-06 6.3e-05 -2.6e-05</acceleration>
+      <wrench>0.067517 0.009756 -0.002619 0 -0 0</wrench>
+
       <inertial>
         <mass>1326.0</mass>
         <pose>0 -0.266 0.48 0 0 0</pose>
@@ -467,6 +472,10 @@
 
     <link name="steering_wheel">
       <pose>0.357734 -0.627868 0.988243 -1.302101 0 0</pose>
+      <velocity>-1e-06 -2.1e-05 2.2e-05 -4e-06 -0.000576 0.000158</velocity>
+      <acceleration>9.2e-05 -6.1e-05 -0.000265 -0.002182 -0.1663 0.040066</acceleration>
+      <wrench>9.2e-05 -6.1e-05 -0.000265 0 -0 0</wrench>
+
       <inertial>
         <mass>1.0</mass>
         <inertia>
@@ -510,6 +519,10 @@
 
     <link name="front_left_wheel">
       <pose>0.76 -1.41 0.3 0 0 0</pose>
+      <velocity>-0 -1.9e-05 3.2e-05 6e-05 1e-06 -5.7e-05</velocity>
+      <acceleration>-0.000319 2.4e-05 2.2e-05 -8.2e-05 -0.001074 0.058368</acceleration>
+      <wrench>-0.003512 0.000265 0.000244 0 -0 0</wrench>
+      
       <inertial>
         <mass>11</mass>
         <inertia>
@@ -565,6 +578,10 @@
 
     <link name="front_right_wheel">
       <pose>-0.76 -1.41 0.3 0 0 0</pose>
+      <velocity>-1e-06 -2e-05 3.1e-05 6.1e-05 -1e-06 1.7e-05</velocity>
+      <acceleration>0.000177 -1.3e-05 -3.2e-05 4.3e-05 0.000577 -0.018318</acceleration>
+      <wrench>0.001943 -0.000139 -0.000353 0 -0 0</wrench>
+
       <inertial>
         <mass>11</mass>
         <inertia>
@@ -621,6 +638,10 @@
 
     <link name="rear_left_wheel">
       <pose>0.786 1.45 0.3 0 0 0</pose>
+      <velocity>-1e-06 -1.9e-05 2.5e-05 6e-05 -0 0</velocity>
+      <acceleration>-3e-06 2.3e-05 2e-06 -7.4e-05 -1.1e-05 -2.5e-05</acceleration>
+      <wrench>-3.7e-05 0.000257 2.1e-05 0 -0 0</wrench>
+
       <inertial>
         <mass>11</mass>
         <inertia>
@@ -676,6 +697,10 @@
 
     <link name="rear_right_wheel">
       <pose>-0.786 1.45 0.3 0 0 0</pose>
+      <velocity>-2e-06 -1.9e-05 2.5e-05 6.2e-05 -3e-06 0</velocity>
+      <acceleration>-4e-06 -1.4e-05 2e-06 4.3e-05 -1.2e-05 -2.7e-05</acceleration>
+      <wrench>-4.3e-05 -0.000149 2.5e-05 0 -0 0</wrench>
+
       <inertial>
         <mass>11</mass>
         <inertia>

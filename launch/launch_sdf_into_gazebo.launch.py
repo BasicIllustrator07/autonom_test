@@ -19,7 +19,7 @@ def generate_launch_description():
   gazebo_models_path = 'models'
   package_name = 'lcube_description'
   robot_name_in_model = 'lcube_car'
-  sdf_model_path = 'models/lcube_description/model.sdf'
+  sdf_model_path = 'models/lcube_test_description/model.sdf'
   world_file_path = 'worlds/city.world'
      
   # Pose where we want to spawn the robot

@@ -15,7 +15,7 @@ import xacro
 def generate_launch_description():
  
   # Set the path to this package.
-  pkg_share = FindPackageShare(package='lcube_description').find('lcube_description')
+  pkg_share = FindPackageShare(package='lcube_test_description').find('lcube_test_description')
  
   # Set the path to the RViz configuration settings
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')

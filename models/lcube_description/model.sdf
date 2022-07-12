@@ -186,7 +186,7 @@
           </plugin>
         </sensor>
 
-      <sensor name="head_hokuyo_sensor1" type="ray">
+      <!--<sensor name="head_hokuyo_sensor1" type="ray">
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>1 -2.3 0.5 0 0.05 0</pose>
@@ -252,10 +252,10 @@
           <output_type>sensor_msgs/LaserScan</output_type>
           <frame_name>chassis</frame_name>
         </plugin>
-      </sensor>
+      </sensor>-->
       
     
-    <!--<sensor name="hls_lfcd_lds1" type="ray">
+    <sensor name="hls_lfcd_lds1" type="ray">
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>1 -2.3 0.5 0 0.05 0</pose>
@@ -271,7 +271,7 @@
           </scan>
           <range>
             <min>0.120000</min>
-            <max>30</max>
+            <max>10</max>
             <resolution>0.015000</resolution>
           </range>
           <noise>
@@ -287,9 +287,9 @@
           <output_type>sensor_msgs/LaserScan</output_type>
           <frame_name>chassis</frame_name>
         </plugin>
-      </sensor>-->
+      </sensor>
      
-     <!--<sensor name="hls_lfcd_lds2" type="ray">
+     <sensor name="hls_lfcd_lds2" type="ray">
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>-1 -2.3 0.5 -0 0.05 3.14</pose>
@@ -305,7 +305,7 @@
           </scan>
           <range>
             <min>0.120000</min>
-            <max>30</max>
+            <max>10</max>
             <resolution>0.015000</resolution>
           </range>
           <noise>
@@ -319,9 +319,9 @@
             <remapping>~/out:=scan_right</remapping>
           </ros>
           <output_type>sensor_msgs/LaserScan</output_type>
-          <frame_name>right_laser_link</frame_name>
+          <frame_name>chassis</frame_name>
         </plugin>
-      </sensor>-->
+      </sensor>
       
       
       <!--Cameras-->
@@ -467,6 +467,342 @@
       </sensor>
 
       <!--ultrasonic sensors-->
+
+      <sensor name="back_left_far_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>0.7 2.4 0.5 0 -0 1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound1" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=back/left/far/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="back_left_middle_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>0.24 2.4 0.5 0 -0 1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=back/left/middle/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="back_right_far_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>-0.7 2.4 0.5 0 -0 1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound3" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=back/right/far/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="back_right_middle_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>-0.24 2.4 0.5 0 -0 1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound4" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=back/right/middle/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="front_left_far_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>0.7 -2.1 0.5 0 0 -1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound5" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=front/left/far/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="front_left_middle_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>0.24 -2.3 0.5 0 0 -1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound6" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=front/left/middle/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="front_right_far_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>-0.7 -2.1 0.5 0 0 -1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound7" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=front/right/far/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
+
+    <sensor name="front_right_middle_sonar_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <pose>-0.24 -2.3 0.5 0 0 -1.5707</pose>
+        <update_rate>50</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.18</min_angle>
+                    <max_angle>0.18</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>5</samples>
+                    <resolution>1.0</resolution>
+                    <min_angle>-0.01</min_angle>
+                    <max_angle>0.01</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>8</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="bytes_ultrasound8" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <namespace>distance</namespace>
+                <remapping>~/out:=front/right/middle/range</remapping>
+            </ros>
+            <output_type>sensor_msgs/Range</output_type>
+            <radiation_type>ultrasound</radiation_type>
+            <frame_name>chassis</frame_name>
+        </plugin>
+    </sensor>
       
     </link>
 

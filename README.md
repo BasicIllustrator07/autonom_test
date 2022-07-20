@@ -1,6 +1,6 @@
 # lcube_test_description
 
-# l3_test_desc
+
 
 ## Build
 git clone this repo in worksapce src directory <br />

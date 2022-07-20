@@ -20,13 +20,18 @@ def generate_launch_description():
   package_name = 'lcube_test_description'
   robot_name_in_model = 'lcube_car'
   sdf_model_path = 'models/lcube_description/model.sdf'
-  world_file_path = 'worlds/city.world'
+  world_file_path = 'worlds/self_driving_car.world'
      
   # Pose where we want to spawn the robot
-  spawn_x_val = '91.14288982830527'
-  spawn_y_val = '2.5500000000000003'
-  spawn_z_val = '0.0'
-  spawn_yaw_val = '1.57'
+  #spawn_x_val = '91.14288982830527'
+  #spawn_y_val = '2.5500000000000003'
+  #spawn_z_val = '0.0'
+  #spawn_yaw_val = '1.57'
+
+  spawn_x_val = '-2.12687'
+  spawn_y_val = '-42.4651'
+  spawn_z_val = '0.03'
+  spawn_yaw_val = '0'
  
   ############ You do not need to change anything below this line #############
    

@@ -31,7 +31,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/hybrid_body.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/hybrid_body.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
@@ -132,7 +132,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>
@@ -150,7 +150,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>
@@ -168,7 +168,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>
@@ -186,7 +186,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>
@@ -198,7 +198,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.302101 0 0"/>
       <geometry>
-        <mesh filename="package://lcube_test_description/meshes/steering_wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://prius/meshes/steering_wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
   </link>

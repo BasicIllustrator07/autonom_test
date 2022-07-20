@@ -147,7 +147,7 @@
       <sensor name='velodyne-VLP16' type='ray'>
           <always_on>false</always_on>
           <visualize>false</visualize>
-          <pose>0 0.4 1.8 0 0 -1.5707</pose>
+          <pose>0.4 0.4 1.8 0 0 -1.5707</pose>
           <update_rate>10</update_rate>
           <ray>
             <scan>
@@ -177,7 +177,7 @@
           </ray>
           <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_laser.so'>
             <ros>
-            <remapping>~/out:=velodyne_points</remapping>
+            <remapping>~/out:=velodyne_points_left</remapping>
           </ros>
             <frame_name>chassis</frame_name>
             <min_range>0.9</min_range>
@@ -185,6 +185,50 @@
             <gaussianNoise>0.008</gaussianNoise>
           </plugin>
         </sensor>
+
+
+      <sensor name='velodyne-VLP162' type='ray'>
+          <always_on>false</always_on>
+          <visualize>false</visualize>
+          <pose>-0.4 0.4 1.8 0 0 -1.5707</pose>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1875</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159</min_angle>
+                <max_angle>3.14159</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.261799</min_angle>
+                <max_angle>0.261799</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.055</min>
+              <max>140</max>
+              <resolution>0.001</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_laser_controller2' filename='libgazebo_ros_velodyne_laser.so'>
+            <ros>
+            <remapping>~/out:=velodyne_points_right</remapping>
+          </ros>
+            <frame_name>chassis</frame_name>
+            <min_range>0.9</min_range>
+            <max_range>130.0</max_range>
+            <gaussianNoise>0.008</gaussianNoise>
+          </plugin>
+        </sensor>
+
 
       <!--<sensor name="head_hokuyo_sensor1" type="ray">
         <always_on>true</always_on>
@@ -260,26 +304,26 @@
         <visualize>true</visualize>
         <pose>1 -2.3 0.5 0 0.05 0</pose>
         <update_rate>5</update_rate>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>360</samples>
-              <resolution>1.000000</resolution>
-              <min_angle>0.000000</min_angle>
-              <max_angle>6.280000</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.120000</min>
-            <max>10</max>
-            <resolution>0.015000</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.01</stddev>
-          </noise>
-        </ray>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>640</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.26889</min_angle>
+            <max_angle>1.5</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.2</min>
+          <max>30</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
         <plugin name="turtlebot3_laserscan1" filename="libgazebo_ros_ray_sensor.so">
           <ros>
             <remapping>~/out:=scan_left</remapping>
@@ -295,25 +339,25 @@
         <pose>-1 -2.3 0.5 -0 0.05 3.14</pose>
         <update_rate>5</update_rate>
         <ray>
-          <scan>
-            <horizontal>
-              <samples>360</samples>
-              <resolution>1.000000</resolution>
-              <min_angle>0.000000</min_angle>
-              <max_angle>6.280000</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.120000</min>
-            <max>10</max>
-            <resolution>0.015000</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.01</stddev>
-          </noise>
-        </ray>
+        <scan>
+          <horizontal>
+            <samples>640</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.5</min_angle>
+            <max_angle>2.26889</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.2</min>
+          <max>30</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
         <plugin name="turtlebot3_laserscan2" filename="libgazebo_ros_ray_sensor.so">
           <ros>
             <remapping>~/out:=scan_right</remapping>
@@ -327,6 +371,7 @@
       <!--Cameras-->
      <sensor name='front_camera_sensor' type='camera'>
         <update_rate>30</update_rate>
+        <visualize>false</visualize>
         <camera name='front_camera'>
           <horizontal_fov>1.39626</horizontal_fov>
           <image>
@@ -396,6 +441,7 @@
       
       <sensor name='left_camera_sensor' type='camera'>
         <update_rate>30</update_rate>
+        <visualize>true</visualize>
         <camera name='left_camera'>
           <horizontal_fov>1.39626</horizontal_fov>
           <image>
@@ -432,6 +478,7 @@
       
       <sensor name='right_camera_sensor' type='camera'>
         <update_rate>30</update_rate>
+        <visualize>false</visualize>
         <camera name='right_camera'>
           <horizontal_fov>1.39626</horizontal_fov>
           <image>

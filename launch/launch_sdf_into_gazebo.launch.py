@@ -17,10 +17,10 @@ def generate_launch_description():
  
   # Constants for paths to different files and folders
   gazebo_models_path = 'models'
-  package_name = 'lcube_test_description'
-  robot_name_in_model = 'lcube_car'
-  sdf_model_path = 'models/lcube_description/model.sdf'
-  world_file_path = 'worlds/self_driving_car.world'
+  package_name = 'autonom_test'
+  robot_name_in_model = 'prius'
+  sdf_model_path = 'models/prius/model.sdf'
+  world_file_path = 'worlds/city.world'
      
   # Pose where we want to spawn the robot
   #spawn_x_val = '91.14288982830527'
@@ -28,9 +28,9 @@ def generate_launch_description():
   #spawn_z_val = '0.0'
   #spawn_yaw_val = '1.57'
 
-  spawn_x_val = '-2.12687'
-  spawn_y_val = '-42.4651'
-  spawn_z_val = '0.03'
+  spawn_x_val = '-17.285596'
+  spawn_y_val = '-12.558559'
+  spawn_z_val = '0.8'
   spawn_yaw_val = '0'
  
   ############ You do not need to change anything below this line #############

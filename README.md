@@ -1,4 +1,4 @@
-# lcube_test_description
+# autonom_test
 
 
 
@@ -11,4 +11,4 @@ git clone this repo in worksapce src directory <br />
 ## Run
 ```source /opt/ros/foxy/setup.bash && cd ~/ws && . install/setup.bash``` <br />
 ```. /usr/share/gazebo/setup.sh``` <br />
-```ros2 launch lcube_test_description launch_sdf_into_gazebo.launch.py```
+```ros2 launch autonom_test launch_sdf_into_gazebo.launch.py```
